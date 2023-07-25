@@ -1,3 +1,4 @@
+import "./App.css";
 import { Route, Routes, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import IphoneCommonProblems from "./pages/subPages/IphoneCommonProblems";
