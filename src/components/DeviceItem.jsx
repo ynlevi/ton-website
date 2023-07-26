@@ -39,10 +39,10 @@ export default function DeviceItem({ name, srcName, delay, elmIsShow }) {
               transform: "scale(1.05)",
             },
           }}
-          href={`home/${srcName}-common-problems`}
+          href={`/${srcName}-common-problems`}
         >
           <img
-            src={`/static/images/devices/${srcName}.jpg`}
+            src={`./static/images/devices/${srcName}.jpg`}
             alt={name}
             style={{
               width: "100%",

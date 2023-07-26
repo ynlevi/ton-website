@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route
           exact
-          path="/home/iphone-common-problems"
+          path="/iphone-common-problems"
           element={<IphoneCommonProblems />}
         />
         <Route exact path="/about" element={<About />} />

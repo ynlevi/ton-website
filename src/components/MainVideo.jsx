@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 export default function MainVideo() {
   return (
     <video
-      src={"/static/video/mainVideo.mp4"}
+      src={"./static/video/mainVideo.mp4"}
       autoPlay
       loop
       muted
