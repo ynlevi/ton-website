@@ -1,7 +1,7 @@
 {
-  "homepage": "http://ynlevi.github.io/ton-website ",
   "name": "ton-website",
   "version": "0.1.0",
+  "homepage": "http://ynlevi.github.io/ton-website",
   "private": false,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -27,7 +27,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build && cp build/index.html build/404.html",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "gh-pages": "^5.0.0"
   }
 }
