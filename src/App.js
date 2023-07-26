@@ -28,7 +28,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="" element={<Home />} />
         <Route
           exact
           path="/home/iphone-common-problems"
