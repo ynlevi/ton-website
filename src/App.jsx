@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, Router, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import IphoneCommonProblems from "./pages/subPages/IphoneCommonProblems";
 import About from "./pages/About";
@@ -28,7 +28,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route exact path="" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route
           exact
           path="/home/iphone-common-problems"
