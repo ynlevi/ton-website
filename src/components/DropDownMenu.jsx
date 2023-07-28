@@ -41,7 +41,7 @@ export default function DropDownMenu({ pages }) {
         >
           <List>
             <ListItem>
-              <ListItemButton component="a" href="/">
+              <ListItemButton component="a" href="/#/">
                 <PhoneIphoneIcon />
               </ListItemButton>
             </ListItem>

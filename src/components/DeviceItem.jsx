@@ -25,6 +25,7 @@ export default function DeviceItem({ name, srcName, delay, elmIsShow }) {
     <Box sx={elmIsShow ? castumShow : castumHidden}>
       <Tooltip title={name}>
         <Button
+          onClick={() => window.scrollTo(0, 0)}
           sx={{
             borderRadius: "inherit",
             p: 0,

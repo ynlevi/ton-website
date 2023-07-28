@@ -149,7 +149,7 @@ export default function CardInfo({ headLine, links, priceTable, imgPath }) {
                       display: "block",
                     }}
                     href={link}
-                    color={"secondary.main"}
+                    color={"secondary"}
                     onClick={() => window.scrollTo(0, 0)}
                   >
                     {getHl(link)}
