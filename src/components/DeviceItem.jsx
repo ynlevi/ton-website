@@ -38,7 +38,7 @@ export default function DeviceItem({ name, srcName, delay, elmIsShow }) {
               transform: "scale(1.05)",
             },
           }}
-          href={`/#/iphone-common-problems`}
+          href={`/ton-website/#/iphone-common-problems`}
         >
           <img
             src={require(`../data/images/devices/${srcName}.jpg`)}

@@ -29,7 +29,7 @@ export default function CardInfo({ headLine, links, priceTable, imgPath }) {
   const getHl = (lk) => {
     const data = blogs
       .flatMap((elm) => elm.dataArr)
-      .find((i) => `/#/blog/${i.url}` === lk).hl;
+      .find((i) => `/ton-website/#/blog/${i.url}` === lk).hl;
     /* capitalize the first letter of the sentence */
     return data.charAt(0).toUpperCase() + data.slice(1);
   };

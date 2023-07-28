@@ -2,7 +2,7 @@ const prices = {
   iPhone: [
     {
       headLine: "The touch isn't working.",
-      links: ["/#/blog/right-rpair-comp"],
+      links: ["/ton-website/#/blog/right-rpair-comp"],
       priceTable: [
         {
           model: "iPhone 6",
@@ -45,7 +45,10 @@ const prices = {
     },
     {
       headLine: "The camera doesn't take pictures.",
-      links: ["/#/blog/right-rpair-comp", "/#/blog/fix-broken-camera"],
+      links: [
+        "/ton-website/#/blog/right-rpair-comp",
+        "/ton-website/#/blog/fix-broken-camera",
+      ],
       imgPath: require("../images/commonProblem/iPhone/iphone-camera.jpg"),
       priceTable: [
         {
@@ -131,7 +134,10 @@ const prices = {
     },
     {
       headLine: "Battery problem.",
-      links: ["/#/blog/save-bettery-life", "/#/blog/right-rpair-comp"],
+      links: [
+        "/ton-website/#/blog/save-bettery-life",
+        "/ton-website/#/blog/right-rpair-comp",
+      ],
       priceTable: [
         {
           model: "iPhone 6",
