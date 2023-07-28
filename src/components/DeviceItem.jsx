@@ -38,17 +38,10 @@ export default function DeviceItem({ name, srcName, delay, elmIsShow }) {
               transform: "scale(1.05)",
             },
           }}
-<<<<<<< HEAD
           href={`/#/iphone-common-problems`}
         >
           <img
             src={require(`../data/images/devices/${srcName}.jpg`)}
-=======
-          href={`/${srcName}-common-problems`}
-        >
-          <img
-            src={`./static/images/devices/${srcName}.jpg`}
->>>>>>> origin/main
             alt={name}
             style={{
               width: "100%",
