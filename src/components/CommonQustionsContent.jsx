@@ -6,14 +6,12 @@ import {
   Box,
   IconButton,
   Divider,
-  Link,
-  Card,
-  CardContent,
-  CardMedia,
-  CardActions,
 } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ContactBtn from "../components/ContactBtn";
+import CQLink from "./CQLInk";
+import Blog from "../pages/Blog";
 export default function CommonQuestionsContent({ sections }) {
   const [isChosen, setIsChosen] = useState([]);
   const toggleExpandMore = (currentIndex) => {
@@ -25,10 +23,11 @@ export default function CommonQuestionsContent({ sections }) {
     });
   };
   return (
-    <Paper elevation={3} sx={{ mt: "5vh", p: 0 }}>
+    <Paper elevation={5} sx={{ mt: "5vh", p: 0 }}>
       {sections.map((sec, i) => (
-        <Box key={i}>
+        <>
           <Box
+            key={sec.secName}
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -39,7 +38,7 @@ export default function CommonQuestionsContent({ sections }) {
             onClick={() => toggleExpandMore(i)}
           >
             <Typography variant="h6" sx={{ cursor: "pointer" }}>
-              {sec.headLine}
+              {sec.secName}
             </Typography>
             <IconButton>
               <ExpandMoreIcon
@@ -52,48 +51,11 @@ export default function CommonQuestionsContent({ sections }) {
               />
             </IconButton>
           </Box>
-
           <Collapse in={isChosen.includes(i)}>
-            <Box bgcolor={"secondary.light"} py={1} px={{ xs: 1, md: 3 }}>
-              {sec.content.map(([link, img], j) => (
-                <Link
-                  sx={{ cursor: "pointer" }}
-                  href="/common-questions/how-to-fix-a-broken-camera"
-                  color={"text.secondary"}
-                >
-                  <Card
-                    key={j}
-                    sx={{
-                      display: "flex ",
-                      justifyContent: "space-between",
-                      my: 2,
-                    }}
-                  >
-                    <CardContent
-                      sx={{
-                        my: "auto",
-                        color: "secondary.main",
-                        width: "60% ",
-                      }}
-                    >
-                      <Typography variant="h6">
-                        {/* capitalize the first letter of the sentence */}
-                        {link.charAt(0).toUpperCase() + link.slice(1)}
-                      </Typography>
-                    </CardContent>
-
-                    <CardMedia
-                      image={img}
-                      title="blbla"
-                      sx={{ height: 100, width: "40%" }}
-                    />
-                  </Card>
-                </Link>
-              ))}
-            </Box>
+            <CQLink data={sec.dataArr} />
           </Collapse>
           {i < sections.length - 1 && <Divider />}
-        </Box>
+        </>
       ))}
     </Paper>
   );

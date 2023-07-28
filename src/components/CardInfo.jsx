@@ -18,11 +18,20 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView, useAnimation, delay } from "framer-motion";
+import blogs from "../data/objects/blogs";
 
 export default function CardInfo({ headLine, links, priceTable, imgPath }) {
   const [isExpand, setIsExpand] = useState(false);
+
   const toggleExpandMore = () => {
     setIsExpand((prev) => !prev);
+  };
+  const getHl = (lk) => {
+    const data = blogs
+      .flatMap((elm) => elm.dataArr)
+      .find((i) => `/#/blog/${i.url}` === lk).hl;
+    /* capitalize the first letter of the sentence */
+    return data.charAt(0).toUpperCase() + data.slice(1);
   };
   // motion effects
   const control = useAnimation();
@@ -139,11 +148,11 @@ export default function CardInfo({ headLine, links, priceTable, imgPath }) {
                       cursor: "pointer",
                       display: "block",
                     }}
-                    href={link.href}
+                    href={link}
                     color={"secondary.main"}
+                    onClick={() => window.scrollTo(0, 0)}
                   >
-                    {/* capitalize the first letter of the sentence */}
-                    {link.text.charAt(0).toUpperCase() + link.text.slice(1)}
+                    {getHl(link)}
                   </Link>
                 ))}
               <Table sx={{ minWidth: 200 }}>

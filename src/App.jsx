@@ -1,12 +1,14 @@
 import "./App.css";
-import { Route, Routes, Link, Router, BrowserRouter } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import IphoneCommonProblems from "./pages/subPages/IphoneCommonProblems";
 import About from "./pages/About";
 import CommonQuestions from "./pages/CommonQuestions";
-import HowToFixABrokenCamera from "./pages/subPages/HowToFixABrokenCamera";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import blogs from "./data/objects/blogs";
+// import { Switch } from "@mui/material";
 const theme = createTheme({
   palette: {
     primary: {
@@ -24,27 +26,21 @@ const theme = createTheme({
   },
 });
 
-function App() {
+export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="" element={<Home />} />
         <Route
           exact
-          path="/home/iphone-common-problems"
+          path="iphone-common-problems"
           element={<IphoneCommonProblems />}
         />
-        <Route exact path="/about" element={<About />} />
+        <Route exact path="/about/:id" element={<About />} />
         <Route exact path="/common-questions" element={<CommonQuestions />} />
-        <Route
-          exact
-          path="/common-questions/how-to-fix-a-broken-camera"
-          element={<HowToFixABrokenCamera />}
-        />
+        <Route exact path="/blog/:id" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </ThemeProvider>
   );
 }
-
-export default App;

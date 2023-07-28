@@ -8,7 +8,6 @@ import {
   Tooltip,
 } from "@mui/material";
 import { hover } from "@testing-library/user-event/dist/hover";
-
 export default function DeviceItem({ name, srcName, delay, elmIsShow }) {
   const castumHidden = {
     opacity: 0,
@@ -39,10 +38,10 @@ export default function DeviceItem({ name, srcName, delay, elmIsShow }) {
               transform: "scale(1.05)",
             },
           }}
-          href={`home/${srcName}-common-problems`}
+          href={`/#/iphone-common-problems`}
         >
           <img
-            src={`/static/images/devices/${srcName}.jpg`}
+            src={require(`../data/images/devices/${srcName}.jpg`)}
             alt={name}
             style={{
               width: "100%",
