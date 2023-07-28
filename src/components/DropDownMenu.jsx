@@ -50,7 +50,7 @@ export default function DropDownMenu({ pages }) {
               <ListItem key={page}>
                 <ListItemButton
                   component="a"
-                  href={"/ton-website/#/" + pages.href[index]}
+                  href={"/ton-website/#" + pages.href[index]}
                 >
                   <ListItemText primary={page}></ListItemText>
                 </ListItemButton>

@@ -11,13 +11,11 @@ import Container from "@mui/material/Container";
 import zIndex from "@mui/material/styles/zIndex";
 export default function Home() {
   return (
-    <Box>
+    <Box sx={{ position: "absolute", top: 0 }}>
       <NavBar />
       <MainVideo />
-      <Container>
-        <MainDescription />
-        <DevicesManu />
-      </Container>
+      <MainDescription />
+      <DevicesManu />
       <Footer />
       <ContactBtn btnDelay={"2s"} />
     </Box>

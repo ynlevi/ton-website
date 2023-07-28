@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Box, CardMedia, Typography } from "@mui/material";
+import { Box, CardMedia, Container, Typography } from "@mui/material";
 import DeviceItem from "./DeviceItem";
 export default function DevicesManu() {
   const deviceItem = [
@@ -20,7 +20,7 @@ export default function DevicesManu() {
   }, []);
   let delay = 0;
   return (
-    <Box mt={{ xs: 25, sm: 33 }} maxWidth={1090} mx={"auto"}>
+    <Container sx={{ my: 10, mx: "auto", maxWidth: 1090 }}>
       <Typography variant="h5" component={"h4"}>
         choose your device:
       </Typography>
@@ -43,6 +43,6 @@ export default function DevicesManu() {
           );
         })}
       </Box>
-    </Box>
+    </Container>
   );
 }
