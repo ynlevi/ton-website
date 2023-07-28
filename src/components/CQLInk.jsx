@@ -14,7 +14,7 @@ export default function CQLink({ data }) {
         <Link
           key={dObj.key}
           sx={{ cursor: "pointer" }}
-          href={`/#/blog/${dObj.url}`}
+          href={`/ton-website/#/blog/${dObj.url}`}
           color={"secondary"}
         >
           <Card

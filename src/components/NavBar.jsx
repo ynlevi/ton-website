@@ -22,7 +22,7 @@ export default function NavBar() {
         }}
       >
         <Button
-          href="/#/"
+          href="/ton-website/#/"
           variant="outline"
           startIcon={<PhoneIphoneIcon />}
           size="large"

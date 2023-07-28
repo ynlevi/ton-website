@@ -17,7 +17,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { faLine } from "@fortawesome/free-brands-svg-icons";
 
-export default function ContactBtn() {
+export default function ContactBtn({ btnDelay }) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
 
@@ -37,7 +37,7 @@ export default function ContactBtn() {
       }}
       ref={containerRef}
     >
-      <Zoom in={true} style={{ transitionDelay: "500ms" }}>
+      <Zoom in={true} style={{ transitionDelay: btnDelay || "800ms" }}>
         <Fab
           aria-label="add"
           color={isOpen ? "secondary" : "success"}

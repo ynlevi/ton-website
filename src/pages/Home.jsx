@@ -8,6 +8,7 @@ import DevicesManu from "../components/DevicesManu.jsx";
 import { Box } from "@mui/material";
 
 import Container from "@mui/material/Container";
+import zIndex from "@mui/material/styles/zIndex";
 export default function Home() {
   return (
     <Box>
@@ -18,7 +19,7 @@ export default function Home() {
         <DevicesManu />
       </Container>
       <Footer />
-      <ContactBtn />
+      <ContactBtn btnDelay={"2s"} />
     </Box>
   );
 }
