@@ -48,7 +48,10 @@ export default function DropDownMenu({ pages }) {
             <Divider />
             {pages.name.map((page, index) => (
               <ListItem key={page}>
-                <ListItemButton component="a" href={pages.href[index]}>
+                <ListItemButton
+                  component="a"
+                  href={"/ton-website/#/" + pages.href[index]}
+                >
                   <ListItemText primary={page}></ListItemText>
                 </ListItemButton>
               </ListItem>
