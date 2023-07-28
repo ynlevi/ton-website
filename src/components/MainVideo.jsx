@@ -1,5 +1,6 @@
 import { Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
+import mainVideo from "../data/video/mainVideo.mp4";
 export default function MainVideo() {
   return (
     <Box sx={{ position: "relative", overflow: "hidden" }}>
@@ -21,10 +22,11 @@ export default function MainVideo() {
         />
       </motion.div>
       <video
-        src={require("../data/video/mainVideo.mp4")}
+        src={mainVideo}
         autoPlay
         loop
-        muted
+        muted={true}
+        playsinline
         style={{
           width: "100vw",
           height: "91vh",
