@@ -5,7 +5,12 @@ export default function MainDescription() {
   let secGrow = 0;
   return (
     <Container
-      sx={{ color: "primary.contrastText", position: "absolute", top: "30vh" }}
+      sx={{
+        color: "primary.contrastText",
+        position: "absolute",
+        top: "30vh",
+        left: { xs: 2, md: "8.5vw" },
+      }}
     >
       <motion.div
         initial={{ x: "-100%", opacity: 0 }}
@@ -15,14 +20,14 @@ export default function MainDescription() {
         <Typography
           variant="h2"
           fontWeight={400}
-          fontSize={{ xs: "2rem", md: "4rem" }}
+          fontSize={{ xs: "2rem", sm: "4rem" }}
         >
           Ton repairs.
         </Typography>
         <Typography
           variant="h2"
           fontWeight={400}
-          fontSize={{ xs: "2rem", md: "4rem" }}
+          fontSize={{ xs: "2rem", sm: "4rem" }}
         >
           {" "}
           the best one in town.
@@ -37,7 +42,7 @@ export default function MainDescription() {
           variant="h5"
           mt={5}
           maxWidth={600}
-          fontSize={{ xs: "1rem", md: "1.5rem" }}
+          fontSize={{ xs: "1rem", sm: "1.5rem" }}
         >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim odit
           excepturi asperiores consectetur esse eos autem tempore, officiis,

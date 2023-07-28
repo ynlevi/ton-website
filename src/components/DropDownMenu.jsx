@@ -51,6 +51,7 @@ export default function DropDownMenu({ pages }) {
                 <ListItemButton
                   component="a"
                   href={"/ton-website/#" + pages.href[index]}
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   <ListItemText primary={page}></ListItemText>
                 </ListItemButton>

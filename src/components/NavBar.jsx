@@ -27,6 +27,7 @@ export default function NavBar() {
           startIcon={<PhoneIphoneIcon />}
           size="large"
           sx={{ textTransform: "capitalize", my: 1.5 }}
+          onClick={() => window.scrollTo(0, 0)}
         >
           <Typography variant="h6" py={1}>
             Ton repairs

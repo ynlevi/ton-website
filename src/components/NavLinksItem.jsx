@@ -23,7 +23,12 @@ export default function NavLinksItem({ pages }) {
         }}
       >
         {pages.name.map((page, index) => (
-          <NavLink exact activeClassName="active" to={pages.href[index]}>
+          <NavLink
+            exact
+            activeClassName="active"
+            to={pages.href[index]}
+            onClick={() => window.scrollTo(0, 0)}
+          >
             {({ isActive }) => (
               <Typography
                 key={page}
