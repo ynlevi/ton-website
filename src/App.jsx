@@ -36,7 +36,7 @@ export default function App() {
           path="/iphone-common-problems"
           element={<IphoneCommonProblems />}
         />
-        <Route exact path="/about/:id" element={<About />} />
+        <Route exact path="/about" element={<About />} />
         <Route exact path="/common-questions" element={<CommonQuestions />} />
         <Route exact path="/blog/:id" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
