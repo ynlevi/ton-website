@@ -1,13 +1,20 @@
 {
   "files": {
     "main.css": "/ton-website/static/css/main.dab6c9a9.css",
-    "main.js": "/ton-website/static/js/main.b4d73341.js",
+    "main.js": "/ton-website/static/js/main.5e3e15da.js",
+    "static/media/mainVideo.mp4": "/ton-website/static/media/mainVideo.09be69c8185e82c667e9.mp4",
+    "static/media/iphone-camera.jpg": "/ton-website/static/media/iphone-camera.71537449f9fb5b0a64f1.jpg",
+    "static/media/ipad.jpg": "/ton-website/static/media/ipad.d0717b790060f20d043c.jpg",
+    "static/media/apple-watch.jpg": "/ton-website/static/media/apple-watch.e8e3ec85289c507c13fa.jpg",
+    "static/media/macbook.jpg": "/ton-website/static/media/macbook.d1d532c477a3ae141069.jpg",
+    "static/media/airpods.jpg": "/ton-website/static/media/airpods.96bb93c76ec59fd9bd9e.jpg",
+    "static/media/iphone.jpg": "/ton-website/static/media/iphone.725427b83a7d9952b519.jpg",
     "index.html": "/ton-website/index.html",
     "main.dab6c9a9.css.map": "/ton-website/static/css/main.dab6c9a9.css.map",
-    "main.b4d73341.js.map": "/ton-website/static/js/main.b4d73341.js.map"
+    "main.5e3e15da.js.map": "/ton-website/static/js/main.5e3e15da.js.map"
   },
   "entrypoints": [
     "static/css/main.dab6c9a9.css",
-    "static/js/main.b4d73341.js"
+    "static/js/main.5e3e15da.js"
   ]
 }
