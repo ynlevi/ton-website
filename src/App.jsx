@@ -33,7 +33,11 @@ export default function App() {
         <Route exact path="" element={<Home />} />
         <Route
           exact
+<<<<<<< HEAD
           path="iphone-common-problems"
+=======
+          path="/iphone-common-problems"
+>>>>>>> origin/main
           element={<IphoneCommonProblems />}
         />
         <Route exact path="/about/:id" element={<About />} />
