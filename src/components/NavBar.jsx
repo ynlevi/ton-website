@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-
+import { motion, useScroll } from "framer-motion";
 export default function NavBar() {
   const pages = {
     name: ["Home", "Contact", "About", "Blog"],
