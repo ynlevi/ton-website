@@ -28,6 +28,7 @@ export default function MainVideo() {
         playing
         loop
         muted
+        playsinline
         width={"100vw"}
         height={"91vh"}
       />
