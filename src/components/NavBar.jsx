@@ -13,12 +13,12 @@ export default function NavBar() {
     href: ["/", "/contact-as", "/about", "/blog"],
   };
   return (
-    <AppBar position="sticky" sx={{ bgcolor: "primary.light" }}>
+    <AppBar position="sticky" sx={{ bgcolor: "primary.light", p: 0 }}>
       <Toolbar
         sx={{
+          m: { xs: "2.5vh 0", md: "3vh 10vw 2vw 8vw" },
           display: "flex",
           justifyContent: "space-between",
-          paddingLeft: 0,
         }}
       >
         <Button
@@ -26,14 +26,12 @@ export default function NavBar() {
           variant="outline"
           startIcon={<PhoneIphoneIcon />}
           size="large"
-          sx={{ textTransform: "capitalize", my: 1.5 }}
+          sx={{ textTransform: "capitalize" }}
           onClick={() => window.scrollTo(0, 0)}
         >
-          <Typography variant="h6" py={1}>
-            Ton repairs
-          </Typography>
+          <Typography variant="h6">Ton repairs</Typography>
         </Button>
-        <Box pr={"14px"}>
+        <Box>
           {/* hamburger btn on mobile screens */}
           <DropDownMenu pages={pages} />
           {/* nav links on big screens */}

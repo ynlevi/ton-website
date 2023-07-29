@@ -21,7 +21,7 @@ export default function DropDownMenu({ pages }) {
         edge="start"
         color="inherit"
         aria-label="menu"
-        sx={{ mr: 2, display: { xs: "flex", md: "none" } }}
+        sx={{ display: { xs: "flex", md: "none" } }}
         onClick={handleDrawerToggle}
       >
         <MenuIcon />
