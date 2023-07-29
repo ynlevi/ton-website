@@ -1,3 +1,6 @@
 body {
   background-color: #f9f2ed;
 }
+.main-video > video {
+  object-fit: cover;
+}

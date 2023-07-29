@@ -37,6 +37,7 @@ export default function DropDownMenu({ pages }) {
             height: "100%",
             color: "primary.light",
             bgcolor: "secondary.light",
+            width: "40vw",
           }}
         >
           <List>

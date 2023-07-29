@@ -10,16 +10,13 @@ import {
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
-
-import Divider from "@mui/material/Divider";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 const contactAsIcons = [<InstagramIcon />, <FacebookIcon />, <TwitterIcon />];
 
 const pages = [
   { name: "Home", href: "/home" },
   { name: "Contact", href: "/contact-as" },
   { name: "About", href: "/about" },
-  { name: "Common Questions", href: "/common-questions" },
+  { name: "Blog", href: "/blog" },
 ];
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -30,7 +27,7 @@ export default function Footer() {
         mt: 10,
         bgcolor: "secondary.main",
         color: "secondary.contrastText",
-        padding: "2rem",
+        p: { xs: "10px 10px 30px", sm: 4 },
         display: "flex",
         justifyContent: "space-between",
         flexDirection: { xs: "column-reverse", sm: "row" },
@@ -47,7 +44,6 @@ export default function Footer() {
           sx={{
             display: { xs: "none", sm: "flex" },
             gap: "1rem",
-            marginTop: "1rem",
           }}
         >
           {contactAsIcons.map((icon, index) => (
@@ -61,16 +57,24 @@ export default function Footer() {
           variant="caption"
           bottom={"2"}
           textAlign={{ xs: "center", sm: "start" }}
+          mt={{ xs: "5vh", sm: "24vh" }}
         >
           Made with &#9825; by Yonathan Levi | &#169; All rights reserved
           {" " + currentYear}
         </Typography>
       </Box>
       <Box display={"flex"} justifyContent={"space-between"}>
-        <List>
+        <List sx={{ py: 0 }}>
           {pages.map((page) => (
-            <ListItem key={page.name}>
-              <Button sx={{ color: "secondary.contrastText" }} href={page.href}>
+            <ListItem key={page.name} sx={{ px: 0 }}>
+              <Button
+                sx={{
+                  color: "secondary.contrastText",
+                  justifyContent: "start",
+                }}
+                href={"/ton-website/#" + page.href}
+                size="small"
+              >
                 {page.name}
               </Button>
             </ListItem>

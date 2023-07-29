@@ -1,6 +1,7 @@
 import { Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import mainVideo from "../data/video/mainVideo.mp4";
+import ReactPlayer from "react-player";
 export default function MainVideo() {
   return (
     <Box sx={{ position: "relative", overflow: "hidden" }}>
@@ -21,19 +22,14 @@ export default function MainVideo() {
           }}
         />
       </motion.div>
-      <video
-        src={mainVideo}
-        autoPlay
+      <ReactPlayer
+        url={mainVideo}
+        className={"main-video"}
+        playing
         loop
-        muted={true}
-        playsinline
-        style={{
-          width: "100vw",
-          height: "91vh",
-          objectPosition: "center",
-          objectFit: "cover",
-          zIndex: -2,
-        }}
+        muted
+        width={"100vw"}
+        height={"91vh"}
       />
     </Box>
   );

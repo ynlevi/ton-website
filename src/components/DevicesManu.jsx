@@ -20,16 +20,18 @@ export default function DevicesManu() {
   }, []);
   let delay = 0;
   return (
-    <Container sx={{ my: 10, mx: "auto", maxWidth: 1090 }}>
+    // sx={{ width: { xs: "95vw", md: "75vw" }, mx: "auto" }}
+    <Container sx={{ m: "8vh auto 16vh" }}>
       <Typography variant="h5" component={"h4"}>
         choose your device:
       </Typography>
       <Box
         mt={5}
         display={"flex"}
-        gap={{ xs: 2, md: 4 }}
         flexWrap={"wrap"}
         ref={targetRef}
+        gap={{ xs: 2, md: 4 }}
+        justifyContent={"flex-start"}
       >
         {deviceItem.map((item) => {
           delay += 100;
@@ -44,5 +46,6 @@ export default function DevicesManu() {
         })}
       </Box>
     </Container>
+    // </Container>
   );
 }

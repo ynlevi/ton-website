@@ -9,8 +9,8 @@ import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 
 export default function NavBar() {
   const pages = {
-    name: ["Home", "Contact", "About", "Common Questions"],
-    href: ["/", "/contact-as", "/about", "/common-questions"],
+    name: ["Home", "Contact", "About", "Blog"],
+    href: ["/", "/contact-as", "/about", "/blog"],
   };
   return (
     <AppBar position="sticky" sx={{ bgcolor: "primary.light" }}>
@@ -33,7 +33,7 @@ export default function NavBar() {
             Ton repairs
           </Typography>
         </Button>
-        <Box>
+        <Box pr={"14px"}>
           {/* hamburger btn on mobile screens */}
           <DropDownMenu pages={pages} />
           {/* nav links on big screens */}

@@ -29,24 +29,27 @@ export default function ContactBtn({ btnDelay }) {
     <Box
       sx={{
         position: "fixed",
-        bottom: 80,
-        right: 50,
+        // bottom: 80,
+        // right: 50,
+        bottom: { xs: "4vh", md: "6vh" },
+        right: { xs: "6vw", md: "3vw" },
         display: "flex",
         flexDirection: "column-reverse",
         gap: 2,
+        zIndex: 10,
       }}
       ref={containerRef}
     >
-      <Zoom in={true} style={{ transitionDelay: btnDelay || "800ms" }}>
+      <Zoom
+        in={true}
+        style={{
+          transitionDelay: btnDelay || "800ms",
+        }}
+      >
         <Fab
           aria-label="add"
           color={isOpen ? "secondary" : "success"}
           onClick={handleContactClick}
-          sx={{
-            "&:hover": {
-              //prevent default hover effect
-            },
-          }}
         >
           {isOpen ? (
             <CloseIcon />

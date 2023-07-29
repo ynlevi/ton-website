@@ -7,7 +7,7 @@ import {
   CardMedia,
 } from "@mui/material";
 import Blog from "../pages/Blog";
-export default function CQLink({ data }) {
+export default function BlogLink({ data }) {
   return (
     <Box bgcolor={"secondary.light"} py={1} px={{ xs: 1, md: 3 }}>
       {data.map((dObj) => (

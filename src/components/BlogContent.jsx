@@ -7,12 +7,10 @@ import {
   IconButton,
   Divider,
 } from "@mui/material";
-import { Route, Routes } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ContactBtn from "../components/ContactBtn";
-import CQLink from "./CQLInk";
+import BlogLink from "./BlogLink";
 import Blog from "../pages/Blog";
-export default function CommonQuestionsContent({ sections }) {
+export default function BlogContent({ sections }) {
   const [isChosen, setIsChosen] = useState([]);
   const toggleExpandMore = (currentIndex) => {
     setIsChosen((prev) => {
@@ -52,7 +50,7 @@ export default function CommonQuestionsContent({ sections }) {
             </IconButton>
           </Box>
           <Collapse in={isChosen.includes(i)}>
-            <CQLink data={sec.dataArr} />
+            <BlogLink data={sec.dataArr} />
           </Collapse>
           {i < sections.length - 1 && <Divider />}
         </>

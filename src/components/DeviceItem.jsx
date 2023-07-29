@@ -8,6 +8,7 @@ import {
   Tooltip,
 } from "@mui/material";
 import { hover } from "@testing-library/user-event/dist/hover";
+import { mix } from "framer-motion";
 export default function DeviceItem({ name, srcName, delay, elmIsShow }) {
   const castumHidden = {
     opacity: 0,
@@ -22,18 +23,23 @@ export default function DeviceItem({ name, srcName, delay, elmIsShow }) {
     transform: "translateX(0)",
   };
   return (
-    <Box sx={elmIsShow ? castumShow : castumHidden}>
+    <Box
+      sx={{
+        flex: "1 1 0",
+        flexBasis: "100px",
+        maxWidth: "30%",
+        ...(elmIsShow ? castumShow : castumHidden),
+      }}
+    >
       <Tooltip title={name}>
         <Button
           onClick={() => window.scrollTo(0, 0)}
           sx={{
             borderRadius: "inherit",
             p: 0,
-            width: { xs: 90, sm: 180 },
-            minWidth: "90px",
+
             borderRadius: 4,
             boxShadow: 12,
-            flexGrow: 1,
             transition: "transform 0.3s ease-in-out",
             "&:hover": {
               transform: "scale(1.05)",
