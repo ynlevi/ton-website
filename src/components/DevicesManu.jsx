@@ -20,7 +20,6 @@ export default function DevicesManu() {
   }, []);
   let delay = 0;
   return (
-    // sx={{ width: { xs: "95vw", md: "75vw" }, mx: "auto" }}
     <Container sx={{ m: "8vh auto 16vh" }}>
       <Typography variant="h5" component={"h4"}>
         choose your device:

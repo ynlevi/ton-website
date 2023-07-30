@@ -10,18 +10,11 @@ export default function MainDescription() {
         position: "absolute",
         zIndex: 2,
         top: "30vh",
-
         left: 0,
         right: 0,
       }}
     >
-      <Container
-        sx={{
-          // width: { xs: "95vw", md: "75vw" },
-          // mx: "auto",
-          position: "relative",
-        }}
-      >
+      <Container>
         <motion.div
           initial={{ x: "-100%", opacity: 0 }}
           animate={{ x: "0", opacity: 1 }}

@@ -13,7 +13,10 @@ import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 export default function DropDownMenu({ pages }) {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
   const handleDrawerToggle = () => setDrawerIsOpen((prev) => !prev);
-
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+    setDrawerIsOpen((prev) => !prev);
+  };
   return (
     <>
       <IconButton
@@ -37,12 +40,16 @@ export default function DropDownMenu({ pages }) {
             height: "100%",
             color: "primary.light",
             bgcolor: "secondary.light",
-            width: "40vw",
+            width: "60vw",
           }}
         >
           <List>
             <ListItem>
-              <ListItemButton component="a" href="/ton-website/#/">
+              <ListItemButton
+                component="a"
+                href="/ton-website/#/"
+                onClick={handleClick}
+              >
                 <PhoneIphoneIcon />
               </ListItemButton>
             </ListItem>
@@ -52,7 +59,7 @@ export default function DropDownMenu({ pages }) {
                 <ListItemButton
                   component="a"
                   href={"/ton-website/#" + pages.href[index]}
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={handleClick}
                 >
                   <ListItemText primary={page}></ListItemText>
                 </ListItemButton>

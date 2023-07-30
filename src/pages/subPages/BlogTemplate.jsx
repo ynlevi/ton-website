@@ -1,5 +1,3 @@
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
 import ContactBtn from "../../components/ContactBtn";
 import blogs from "../../data/objects/blogs";
 import { Box, Container, Typography } from "@mui/material";
@@ -8,10 +6,11 @@ export default function BlogTemplate() {
   const { id } = useParams();
   const data = blogs.flatMap((elm) => elm.dataArr);
   const blog = data.find((i) => i.url === id);
+
   if (blog) {
     return (
       <Box>
-        <Container sx={{ mt: "7vh" }}>
+        <Container sx={{ pt: "7vh" }}>
           <Box display={"flex"} flexDirection={{ xs: "column", md: "row" }}>
             <Box width={{ xs: "100%", md: "50%" }}>
               <img
@@ -51,6 +50,6 @@ export default function BlogTemplate() {
       </Box>
     );
   } else {
-    return <h1>somthing wenet wrong</h1>;
+    return <h1>somthing when terribly wrong</h1>;
   }
 }
