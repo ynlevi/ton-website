@@ -9,6 +9,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import { Divider } from "@mui/material";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import { Link } from "react-router-dom";
 
 export default function DropDownMenu({ pages }) {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
@@ -56,13 +57,21 @@ export default function DropDownMenu({ pages }) {
             <Divider />
             {pages.name.map((page, index) => (
               <ListItem key={page}>
-                <ListItemButton
-                  component="a"
-                  href={"/ton-website/#" + pages.href[index]}
-                  onClick={handleClick}
+                <Link
+                  to={pages.href[index]}
+                  style={{
+                    textDecoration: "none",
+                    width: "100%",
+                  }}
                 >
-                  <ListItemText primary={page}></ListItemText>
-                </ListItemButton>
+                  <ListItemButton
+                    // href={"/ton-website/#" + }
+                    sx={{ color: "primary.main" }}
+                    onClick={handleClick}
+                  >
+                    <ListItemText primary={page}></ListItemText>
+                  </ListItemButton>
+                </Link>
               </ListItem>
             ))}
           </List>

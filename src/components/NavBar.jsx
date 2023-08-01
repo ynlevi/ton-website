@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import { motion, useScroll } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function NavBar() {
   //add progress line on blog/:name page only
@@ -29,16 +29,16 @@ export default function NavBar() {
           justifyContent: "space-between",
         }}
       >
-        <Button
-          href="/ton-website/#/"
-          variant="outline"
-          startIcon={<PhoneIphoneIcon />}
-          size="large"
-          sx={{ textTransform: "capitalize" }}
-          onClick={() => window.scrollTo(0, 0)}
-        >
-          <Typography variant="h6">Ton repairs</Typography>
-        </Button>
+        <Link to={"/"}>
+          <Button
+            startIcon={<PhoneIphoneIcon />}
+            size="large"
+            sx={{ textTransform: "capitalize", color: "primary.contrastText" }}
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            <Typography variant="h6">Ton repairs</Typography>
+          </Button>
+        </Link>
         <Box>
           {/* hamburger btn on mobile screens */}
           <DropDownMenu pages={pages} />
