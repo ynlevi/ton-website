@@ -8,7 +8,7 @@ export default function MainVideo() {
       <motion.div
         initial={{ translateX: "0" }}
         animate={{ translateX: "+100%" }}
-        transition={{ ease: "easeOut", duration: 0.9 }}
+        transition={{ type: "just", duration: 0.9 }}
         style={{
           zIndex: 1,
           position: "absolute",

@@ -3,6 +3,19 @@ import { motion } from "framer-motion";
 
 export default function MainDescription() {
   let secGrow = 0;
+  const textFromLeft = {
+    hide: { x: "-100%", opacity: 0 },
+    visi: (ms) => ({
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        delay: ms,
+      },
+    }),
+  };
+
   return (
     <Box
       sx={{
@@ -16,9 +29,10 @@ export default function MainDescription() {
     >
       <Container>
         <motion.div
-          initial={{ x: "-100%", opacity: 0 }}
-          animate={{ x: "0", opacity: 1 }}
-          transition={{ ease: "easeInOut", duration: 0.9, delay: 0 }} // Adding delay here
+          variants={textFromLeft}
+          initial="hide"
+          animate="visi"
+          custom={0.3}
         >
           <Typography
             variant="h2"
@@ -32,26 +46,22 @@ export default function MainDescription() {
             fontWeight={400}
             fontSize={{ xs: "2rem", sm: "4rem" }}
           >
-            {" "}
             the best one in town.
           </Typography>
-        </motion.div>
-        <motion.div
-          initial={{ x: "-100%", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ ease: "easeInOut", duration: 0.9, delay: 1 }} // Adding delay here
-        >
-          <Typography
-            variant="h5"
-            mt={5}
-            maxWidth={600}
-            fontSize={{ xs: "1rem", sm: "1.5rem" }}
-          >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim odit
-            excepturi asperiores consectetur esse eos autem tempore, officiis,
-            deleniti corrupti tenetur laboriosam, commodi voluptate expedita.
-            Natus est repellendus aperiam sunt.
-          </Typography>
+
+          <motion.div variants={textFromLeft} custom={1}>
+            <Typography
+              variant="h5"
+              mt={5}
+              maxWidth={600}
+              fontSize={{ xs: "1rem", sm: "1.5rem" }}
+            >
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+              odit excepturi asperiores consectetur esse eos autem tempore,
+              officiis, deleniti corrupti tenetur laboriosam, commodi voluptate
+              expedita. Natus est repellendus aperiam sunt.
+            </Typography>
+          </motion.div>
         </motion.div>
       </Container>
     </Box>

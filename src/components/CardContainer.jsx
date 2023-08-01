@@ -9,7 +9,7 @@ export default function CardContainer() {
       <motion.div
         initial={{ x: "-100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ ease: "easeInOut", duration: 0.7, delay: 0.2 }}
+        transition={{ type: "spring", mass: 1 }}
       >
         <Typography variant="h3" fontWeight={100} mb={5}>
           our service:

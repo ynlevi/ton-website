@@ -16,8 +16,8 @@ import {
   Button,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useState, useEffect, useRef } from "react";
-import { motion, useInView, useAnimation, delay } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import blogs from "../data/objects/blogs";
 
 export default function CardInfo({ headLine, links, priceTable, imgPath }) {
@@ -34,17 +34,12 @@ export default function CardInfo({ headLine, links, priceTable, imgPath }) {
     return data.charAt(0).toUpperCase() + data.slice(1);
   };
   // motion effects
-  const control = useAnimation();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  useEffect(() => {
-    isInView && control.start("visible");
-  }, [isInView]);
+
   const castumMotion = {
     initial: "hidden",
-    animate: { control },
+    whileInView: "visible",
+    viewport: { once: true },
     transition: { ease: "easeOut", duration: 0.8 },
-    ref: { ref },
     variants: {
       visible: { y: 0, opacity: 1 },
       hidden: { y: 100, opacity: 0 },
@@ -67,14 +62,14 @@ export default function CardInfo({ headLine, links, priceTable, imgPath }) {
   };
 
   return (
-    <motion.div {...castumMotion} ref={ref} animate={control}>
+    <motion.div {...castumMotion}>
       <Card
         sx={{
           borderRadius: 4,
           boxShadow: 23,
         }}
       >
-        <motion.div {...castumMotion} ref={ref} animate={control}>
+        <motion.div {...castumMotion}>
           <CardMedia
             image={
               imgPath ||
@@ -91,8 +86,6 @@ export default function CardInfo({ headLine, links, priceTable, imgPath }) {
         </motion.div>
         <motion.div
           {...castumMotion}
-          ref={ref}
-          animate={control}
           transition={{ ...castumMotion.transition, delay: 0.3 }}
         >
           <CardContent sx={{ ...castumCard }}>
