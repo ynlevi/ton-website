@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Box, CardMedia, Container, Typography } from "@mui/material";
 import DeviceItem from "./DeviceItem";
+import { motion } from "framer-motion";
 export default function DevicesManu() {
   const deviceItem = [
     { name: "AirPods", srcName: "airpods" },
@@ -9,42 +10,47 @@ export default function DevicesManu() {
     { name: "iPhone", srcName: "iphone" },
     { name: "MacBook", srcName: "macbook" },
   ];
+  ///motion effect:
+  const containerEffec = {
+    hide: {
+      opacity: 0,
+      x: "-100%",
+    },
+    visi: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        delayChildren: 0.5,
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
-  const targetRef = useRef(null);
-  const [elmIsShow, setElmIsShow] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => setElmIsShow(entry.isIntersecting));
-    });
-    targetRef.current && observer.observe(targetRef.current);
-  }, []);
-  let delay = 0;
   return (
     <Container sx={{ m: "8vh auto 16vh" }}>
-      <Typography variant="h5" component={"h4"}>
-        choose your device:
-      </Typography>
-      <Box
-        mt={5}
-        display={"flex"}
-        flexWrap={"wrap"}
-        ref={targetRef}
-        gap={{ xs: 2, md: 4 }}
-        justifyContent={"flex-start"}
+      <motion.div
+        variants={containerEffec}
+        initial="hide"
+        whileInView="visi"
+        viewport={{ once: false }}
       >
-        {deviceItem.map((item) => {
-          delay += 100;
-          return (
-            <DeviceItem
-              key={item.name}
-              {...item}
-              delay={delay}
-              elmIsShow={elmIsShow}
-            />
-          );
-        })}
-      </Box>
+        <Typography variant="h5" component={"h4"}>
+          choose your device:
+        </Typography>
+
+        <Box
+          mt={5}
+          display={"flex"}
+          flexWrap={"wrap"}
+          gap={{ xs: 2, md: 4 }}
+          justifyContent={"flex-start"}
+        >
+          {deviceItem.map((item) => {
+            return <DeviceItem key={item.name} {...item} />;
+          })}
+        </Box>
+      </motion.div>
     </Container>
-    // </Container>
   );
 }

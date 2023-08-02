@@ -33,7 +33,11 @@ export default function NavBar() {
           <Button
             startIcon={<PhoneIphoneIcon />}
             size="large"
-            sx={{ textTransform: "capitalize", color: "primary.contrastText" }}
+            sx={{
+              textTransform: "capitalize",
+              color: "primary.contrastText",
+              textDecoration: "none",
+            }}
             onClick={() => window.scrollTo(0, 0)}
           >
             <Typography variant="h6">Ton repairs</Typography>

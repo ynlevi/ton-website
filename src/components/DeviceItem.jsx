@@ -8,58 +8,52 @@ import {
   Tooltip,
 } from "@mui/material";
 import { hover } from "@testing-library/user-event/dist/hover";
-import { mix } from "framer-motion";
-export default function DeviceItem({ name, srcName, delay, elmIsShow }) {
-  const castumHidden = {
-    opacity: 0,
-    filter: "blur(20px)",
-    transform: "translateX(-100vh)",
-  };
-  const castumShow = {
-    transition: "all 500ms",
-    transitionDelay: delay + "ms",
-    opacity: 1,
-    filter: "blur(0)",
-    transform: "translateX(0)",
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+export default function DeviceItem({ name, srcName }) {
+  const itemsEffect = {
+    hide: { y: "-100%", x: "-100%", filter: "blur(20px)", opacity: 0 },
+    visi: { y: 0, x: 0, filter: "blur(0)", opacity: 1 },
   };
   return (
-    <Box
-      sx={{
+    <motion.div
+      variants={itemsEffect}
+      viewport={{ once: false }}
+      style={{
         flex: "1 1 0",
         flexBasis: "100px",
         maxWidth: "30%",
-        ...(elmIsShow ? castumShow : castumHidden),
       }}
     >
-      <Tooltip title={name}>
-        <Button
-          onClick={() => window.scrollTo(0, 0)}
-          sx={{
-            borderRadius: "inherit",
-            p: 0,
-
-            borderRadius: 4,
-            boxShadow: 12,
-            transition: "transform 0.3s ease-in-out",
-            "&:hover": {
-              transform: "scale(1.05)",
-            },
-          }}
-          href={`/ton-website/#/iphone-common-problems`}
-        >
-          <img
-            src={require(`../data/images/devices/${srcName}.jpg`)}
-            alt={name}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
+      <Link to={`iphone-common-problems`}>
+        <Tooltip title={name}>
+          <Button
+            onClick={() => window.scrollTo(0, 0)}
+            sx={{
               borderRadius: "inherit",
+              p: 0,
+              borderRadius: 4,
+              boxShadow: 12,
+              transition: "transform 0.3s ease-in-out",
+              "&:hover": {
+                transform: "scale(1.05)",
+              },
             }}
-          />
-        </Button>
-      </Tooltip>
-    </Box>
+          >
+            <img
+              src={require(`../data/images/devices/${srcName}.jpg`)}
+              alt={name}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center",
+                borderRadius: "inherit",
+              }}
+            />
+          </Button>
+        </Tooltip>
+      </Link>
+    </motion.div>
   );
 }
