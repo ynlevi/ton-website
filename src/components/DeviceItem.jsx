@@ -18,7 +18,7 @@ export default function DeviceItem({ name, srcName }) {
   return (
     <motion.div
       variants={itemsEffect}
-      viewport={{ once: false }}
+      viewport={{ once: true }}
       style={{
         flex: "1 1 0",
         flexBasis: "100px",

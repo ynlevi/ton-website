@@ -33,7 +33,7 @@ export default function DevicesManu() {
         variants={containerEffec}
         initial="hide"
         whileInView="visi"
-        viewport={{ once: false }}
+        viewport={{ once: true }}
       >
         <Typography variant="h5" component={"h4"}>
           choose your device:

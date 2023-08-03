@@ -7,9 +7,17 @@ import {
   CardMedia,
 } from "@mui/material";
 import Blog from "../pages/Blog";
-export default function BlogLink({ data }) {
+export default function BlogLink({ data, isLastSec }) {
   return (
-    <Box bgcolor={"secondary.light"} py={1} px={{ xs: 1, md: 3 }}>
+    <Box
+      bgcolor={"secondary.light"}
+      py={1}
+      px={{ xs: 1, md: 3 }}
+      sx={{
+        borderBottomRightRadius: isLastSec ? "16px" : 0,
+        borderBottomLeftRadius: isLastSec ? "16px" : 0,
+      }}
+    >
       {data.map((dObj) => (
         <Link
           key={dObj.key}
