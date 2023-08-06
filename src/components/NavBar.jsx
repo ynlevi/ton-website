@@ -31,7 +31,10 @@ export default function NavBar() {
           minHeight: "fit-container",
         }}
       >
-        <Link to={"/"} sx={{ textDecoration: "none" }}>
+        <Link
+          to={"/"}
+          sx={{ textDecoration: "none", textDecorationLine: "none" }}
+        >
           <Button
             startIcon={<PhoneIphoneIcon />}
             size="small"
