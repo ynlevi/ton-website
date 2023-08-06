@@ -16,7 +16,7 @@ export default function BlogTemplate() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 10vh", "30vh end"],
+    offset: ["start .2", "start .7"],
   });
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     console.log("target scroll: ", latest);
@@ -105,6 +105,6 @@ export default function BlogTemplate() {
       </>
     );
   } else {
-    return <h1>somthing when terribly wrong</h1>;
+    return <h1>if you see it, it means that somthing when terribly wrong</h1>;
   }
 }

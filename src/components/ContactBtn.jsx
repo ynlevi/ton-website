@@ -9,6 +9,7 @@ import {
   Slide,
   Fab,
 } from "@mui/material";
+import { motion } from "framer-motion";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CloseIcon from "@mui/icons-material/Close";

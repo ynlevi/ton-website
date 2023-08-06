@@ -19,7 +19,8 @@ export default function NavLinksItem({ pages }) {
         sx={{
           display: { xs: "none", md: "flex" },
           gap: "2rem",
-          padding: 0,
+          position: "relative",
+          top: 4,
         }}
       >
         {pages.name.map((page, index) => (

@@ -21,22 +21,23 @@ export default function NavBar() {
   };
 
   return (
-    <AppBar position="sticky" sx={{ bgcolor: "primary.light", p: 0 }}>
+    <AppBar sx={{ bgcolor: "primary.light", p: 0, position: "relative" }}>
       <Toolbar
+        variant="dense"
         sx={{
-          m: { xs: "2.5vh 0", md: "3vh 10vw 2vw 8vw" },
+          m: { xs: "2vh 0", md: "2.5vh 10vw 2.5vh 8vw" },
           display: "flex",
           justifyContent: "space-between",
+          minHeight: "fit-container",
         }}
       >
-        <Link to={"/"}>
+        <Link to={"/"} sx={{ textDecoration: "none" }}>
           <Button
             startIcon={<PhoneIphoneIcon />}
-            size="large"
+            size="small"
             sx={{
               textTransform: "capitalize",
               color: "primary.contrastText",
-              textDecoration: "none",
             }}
             onClick={() => window.scrollTo(0, 0)}
           >

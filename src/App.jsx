@@ -7,9 +7,8 @@ import Blog from "./pages/Blog";
 import BlogTemplate from "./pages/subPages/BlogTemplate";
 import NotFound from "./pages/NotFound";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import NavBar from "./components/NavBar";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ContactBtn from "./components/ContactBtn";
 const theme = createTheme({
   palette: {
     primary: {
@@ -30,7 +29,7 @@ const theme = createTheme({
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <NavBar />
+      <Header />
       <Routes>
         <Route exact path="" element={<Home />} />
         <Route
