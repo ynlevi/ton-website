@@ -1,7 +1,6 @@
 import { Grid, Typography, Box, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
-
 import CardInfo from "../../components/CardInfo";
 import cpObj from "../../data/objects/cp";
 import ContactBtn from "../../components/ContactBtn";

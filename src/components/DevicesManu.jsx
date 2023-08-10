@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Box, CardMedia, Container, Typography } from "@mui/material";
 import DeviceItem from "./DeviceItem";
 import { motion } from "framer-motion";
-export default function DevicesManu() {
+export default function DevicesManu({ choose }) {
   const deviceItem = [
     { name: "AirPods", srcName: "airpods" },
     { name: "Watch", srcName: "apple-watch" },
@@ -36,7 +36,7 @@ export default function DevicesManu() {
         viewport={{ once: true }}
       >
         <Typography variant="h5" component={"h4"}>
-          choose your device:
+          {choose}
         </Typography>
 
         <Box

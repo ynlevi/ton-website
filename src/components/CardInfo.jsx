@@ -20,7 +20,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import blogs from "../data/objects/blogs";
 
-export default function CardInfo({ headLine, links, priceTable, imgPath }) {
+export default function CardInfo({ headLine, links, priceTable, imgPath, p }) {
   const [isExpand, setIsExpand] = useState(false);
 
   const toggleExpandMore = () => {
@@ -81,24 +81,26 @@ export default function CardInfo({ headLine, links, priceTable, imgPath }) {
               ...castumCard,
               mt: "5%",
               borderRadius: 4,
+              border: ".4px solid lightgray",
             }}
           />
         </motion.div>
         <motion.div
           {...castumMotion}
           transition={{ ...castumMotion.transition, delay: 0.3 }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "40vh",
+            overflow: "scroll",
+          }}
         >
           <CardContent sx={{ ...castumCard }}>
-            <Typography variant="h5" pr={6} mb={1}>
+            <Typography variant="h5" pr={6} mt={2} mb={1}>
               {headLine}
             </Typography>
-            <Typography>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Aspernatur veniam debitis aliquid sed repudiandae. Magni corporis
-              vero minus error illum quidem esse, unde corrupti consequuntur
-              officiis veniam aliquam architecto delectus. Officiis nihil, iure
-              nemo sed odio id
-            </Typography>
+            <Typography>{p}</Typography>
           </CardContent>
           <CardContent
             sx={{
@@ -123,7 +125,7 @@ export default function CardInfo({ headLine, links, priceTable, imgPath }) {
                 />
               }
             >
-              Estimated price
+              ราคาโดยประมาณ
             </Button>
           </CardContent>
         </motion.div>
@@ -148,48 +150,56 @@ export default function CardInfo({ headLine, links, priceTable, imgPath }) {
                     {getHl(link)}
                   </Link>
                 ))}
-              <Table sx={{ minWidth: 200 }}>
-                <TableHead>
-                  <TableRow>
-                    <TableCell></TableCell>
-                    <TableCell sx={{ ...castumHeadCell }} align="right">
-                      Basic Model
-                    </TableCell>
-                    <TableCell sx={{ ...castumHeadCell }} align="right">
-                      Pro
-                    </TableCell>
-                    <TableCell sx={{ ...castumHeadCell }} align="right">
-                      Pro Max
-                    </TableCell>
-                    <TableCell sx={{ ...castumHeadCell }} align="right">
-                      Plus
-                    </TableCell>
-                    <TableCell sx={{ ...castumHeadCell }} align="right">
-                      Mini
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {priceTable.map((obj, i) => (
-                    <TableRow key={i}>
-                      <TableCell sx={{ fontSize: 11, whiteSpace: "nowrap" }}>
-                        {obj.model}
+              {priceTable ? (
+                <Table sx={{ minWidth: 200 }}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell></TableCell>
+                      <TableCell sx={{ ...castumHeadCell }} align="right">
+                        Basic Model
                       </TableCell>
-                      <TableCell {...castumBodyCell}>
-                        {obj.price.basic}
+                      <TableCell sx={{ ...castumHeadCell }} align="right">
+                        Pro
                       </TableCell>
-                      <TableCell {...castumBodyCell}>{obj.price.pro}</TableCell>
-                      <TableCell {...castumBodyCell}>{obj.price.max}</TableCell>
-                      <TableCell {...castumBodyCell}>
-                        {obj.price.plus}
+                      <TableCell sx={{ ...castumHeadCell }} align="right">
+                        Pro Max
                       </TableCell>
-                      <TableCell {...castumBodyCell}>
-                        {obj.price.mini}
+                      <TableCell sx={{ ...castumHeadCell }} align="right">
+                        Plus
+                      </TableCell>
+                      <TableCell sx={{ ...castumHeadCell }} align="right">
+                        Mini
                       </TableCell>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+                  </TableHead>
+                  <TableBody>
+                    {priceTable.map((obj, i) => (
+                      <TableRow key={i}>
+                        <TableCell sx={{ fontSize: 11, whiteSpace: "nowrap" }}>
+                          {obj.model}
+                        </TableCell>
+                        <TableCell {...castumBodyCell}>
+                          {obj.price.basic}
+                        </TableCell>
+                        <TableCell {...castumBodyCell}>
+                          {obj.price.pro}
+                        </TableCell>
+                        <TableCell {...castumBodyCell}>
+                          {obj.price.max}
+                        </TableCell>
+                        <TableCell {...castumBodyCell}>
+                          {obj.price.plus}
+                        </TableCell>
+                        <TableCell {...castumBodyCell}>
+                          {obj.price.mini}
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              ) : (
+                <p>not price define. please contact as.</p>
+              )}
             </Box>
           </CardContent>
         </Collapse>
