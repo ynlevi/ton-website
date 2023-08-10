@@ -1,7 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
-export default function MainDescription() {
+export default function MainDescription({ homeObj }) {
   let secGrow = 0;
   const textFromLeft = {
     hide: { x: "-100%", opacity: 0 },
@@ -39,14 +39,14 @@ export default function MainDescription() {
             fontWeight={400}
             fontSize={{ xs: "2rem", sm: "4rem" }}
           >
-            Ton repairs.
+            {homeObj.hl1}
           </Typography>
           <Typography
             variant="h2"
             fontWeight={400}
             fontSize={{ xs: "2rem", sm: "4rem" }}
           >
-            the best one in town.
+            {homeObj.hl2}
           </Typography>
 
           <motion.div variants={textFromLeft} custom={1}>
@@ -56,10 +56,7 @@ export default function MainDescription() {
               maxWidth={600}
               fontSize={{ xs: "1rem", sm: "1.5rem" }}
             >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
-              odit excepturi asperiores consectetur esse eos autem tempore,
-              officiis, deleniti corrupti tenetur laboriosam, commodi voluptate
-              expedita. Natus est repellendus aperiam sunt.
+              {homeObj.p}
             </Typography>
           </motion.div>
         </motion.div>

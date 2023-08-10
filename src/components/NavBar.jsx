@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
-import { motion, useScroll } from "framer-motion";
+import { color, motion, useScroll } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 export default function NavBar() {
@@ -33,7 +33,7 @@ export default function NavBar() {
       >
         <Link
           to={"/"}
-          sx={{ textDecoration: "none", textDecorationLine: "none" }}
+          style={{ textDecoration: "none", textDecorationLine: "none" }}
         >
           <Button
             startIcon={<PhoneIphoneIcon />}

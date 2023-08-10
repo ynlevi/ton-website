@@ -105,6 +105,6 @@ export default function BlogTemplate() {
       </>
     );
   } else {
-    return <h1>if you see it, it means that somthing when terribly wrong</h1>;
+    return <h1>blog not exis.</h1>;
   }
 }

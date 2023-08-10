@@ -25,15 +25,15 @@ export default function DeviceItem({ name, srcName }) {
         maxWidth: "30%",
       }}
     >
-      <Link to={`iphone-common-problems`}>
+      <Link to={`commen-problems/${srcName}`}>
         <Tooltip title={name}>
           <Button
             onClick={() => window.scrollTo(0, 0)}
             sx={{
               borderRadius: "inherit",
               p: 0,
-              borderRadius: 4,
-              boxShadow: 12,
+              borderRadius: 5,
+              boxShadow: 15,
               transition: "transform 0.3s ease-in-out",
               "&:hover": {
                 transform: "scale(1.05)",
