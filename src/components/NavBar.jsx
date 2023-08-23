@@ -33,7 +33,8 @@ export default function NavBar() {
       >
         <Link
           to={"/"}
-          sx={{ textDecoration: "none", textDecorationLine: "none" }}
+          sx={{ textDecoration: "none" }}
+          style={{ textDecorationLine: "none" }}
         >
           <Button
             startIcon={<PhoneIphoneIcon />}
