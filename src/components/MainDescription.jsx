@@ -33,18 +33,19 @@ export default function MainDescription({ hl1, hl2, p }) {
           initial="hide"
           animate="visi"
           custom={0.3}
+          style={{ color: "#000" }}
         >
           <Typography
             variant="h2"
-            fontWeight={400}
-            fontSize={{ xs: "2rem", sm: "4rem" }}
+            fontWeight={500}
+            fontSize={{ xs: "2rem", sm: "3.5rem" }}
           >
             {hl1}
           </Typography>
           <Typography
             variant="h2"
             fontWeight={400}
-            fontSize={{ xs: "2rem", sm: "4rem" }}
+            fontSize={{ xs: "2rem", sm: "3.5rem" }}
           >
             {hl2}
           </Typography>
@@ -54,7 +55,9 @@ export default function MainDescription({ hl1, hl2, p }) {
               variant="h5"
               mt={5}
               maxWidth={600}
+              fontWeight={400}
               fontSize={{ xs: "1rem", sm: "1.5rem" }}
+              color={"black"}
             >
               {p}
             </Typography>
